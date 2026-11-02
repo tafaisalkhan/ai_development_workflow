@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='description' content='Responsive signup form with client-side username and password validation.'>
+  <title>Create your account</title>
+  <link rel='stylesheet' href='assets/css/tokens.css'>
+  <link rel='stylesheet' href='assets/css/base.css'>
+  <link rel='stylesheet' href='assets/css/layout.css'>
+  <link rel='stylesheet' href='assets/css/form.css'>
+  <script src='assets/js/validation-engine.js' defer></script>
+  <script src='assets/js/validation-rules.js' defer></script>
+  <script src='assets/js/messages.js' defer></script>
+  <script src='assets/js/feedback-renderer.js' defer></script>
+  <script src='assets/js/submission-handler.js' defer></script>
+  <script src='assets/js/form-controller.js' defer></script>
+  <script src='assets/js/app.js' defer></script>
+</head>
+<body>
+  <main class='page'>
+    <section class='card' aria-labelledby='signup-title'>
+      <header class='card__header'>
+        <p class='eyebrow'>Get started</p>
+        <h1 id='signup-title'>Create your account</h1>
+        <p class='card__intro'>Choose a username and password to continue.</p>
+      </header>
+
+      <noscript>
+        <p class='card__intro'>JavaScript is required to validate this form.</p>
+      </noscript>
+
+      <form id='signup-form' class='form' novalidate>
+        <div class='field'>
+          <label class='field__label' for='username'>Username</label>
+          <input
+            class='field__input'
+            id='username'
+            name='username'
+            type='text'
+            autocomplete='username'
+            autocapitalize='none'
+            spellcheck='false'
+            data-field='username'
+            aria-describedby='username-error'
+            required
+          >
+          <p class='field__error' id='username-error' data-error-for='username' hidden></p>
+        </div>
+
+        <div class='field'>
+          <label class='field__label' for='password'>Password</label>
+          <input
+            class='field__input'
+            id='password'
+            name='password'
+            type='password'
+            autocomplete='new-password'
+            data-field='password'
+            aria-describedby='password-error'
+            required
+          >
+          <p class='field__error' id='password-error' data-error-for='password' hidden></p>
+        </div>
+
+        <button class='button' type='submit'>Create account</button>
+
+        <p class='form__status' id='form-status' data-form-status role='status' aria-live='polite' aria-atomic='true'></p>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

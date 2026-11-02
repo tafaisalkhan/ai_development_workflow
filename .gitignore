@@ -1,0 +1,15 @@
+target/
+.m2/
+*.log
+.idea/
+.vscode/
+node_modules/
+coverage/
+.platform/
+**/.platform/
+.env
+.env.*
+*.pem
+*.key
+*.jks
+src/main/resources/application-local.yml

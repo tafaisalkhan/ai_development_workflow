@@ -1,0 +1,6 @@
+{
+  "projectName": "signup-page",
+  "prompt": "Create a simple responsive HTML signup page with username and password fields. Both fields must not be empty or whitespace-only. Show validation errors when invalid and a success message when valid. Do not use a backend or database.",
+  "technology": ["HTML", "CSS", "JavaScript"],
+  "approvalRequired": true
+}

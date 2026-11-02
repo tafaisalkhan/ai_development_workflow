@@ -1,0 +1,18 @@
+{
+  "info": {"name": "Local AI Development Platform", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},
+  "variable": [
+    {"key": "baseUrl", "value": "http://localhost:8081"},
+    {"key": "workflowId", "value": ""},
+    {"key": "approvalId", "value": "requirements-v1"},
+    {"key": "stage", "value": "REQUIREMENTS"}
+  ],
+  "item": [
+    {"name": "Start project", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "url": "{{baseUrl}}/api/projects/start", "body": {"mode": "raw", "raw": "{\"projectName\":\"signup-page\",\"prompt\":\"Create a responsive signup page with username and password validation.\",\"technology\":[\"HTML\",\"CSS\",\"JavaScript\"],\"approvalRequired\":true}"}}},
+    {"name": "Status", "request": {"method": "GET", "url": "{{baseUrl}}/api/projects/{{workflowId}}/status"}},
+    {"name": "Files", "request": {"method": "GET", "url": "{{baseUrl}}/api/projects/{{workflowId}}/files"}},
+    {"name": "Requirements content", "request": {"method": "GET", "url": "{{baseUrl}}/api/projects/{{workflowId}}/files/content?path=docs%2Frequirements.md"}},
+    {"name": "Decision", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "url": "{{baseUrl}}/api/projects/{{workflowId}}/decision", "body": {"mode": "raw", "raw": "{\"approvalId\":\"{{approvalId}}\",\"stage\":\"{{stage}}\",\"decision\":\"APPROVE\",\"feedback\":\"\"}"}}},
+    {"name": "History", "request": {"method": "GET", "url": "{{baseUrl}}/api/projects/{{workflowId}}/history"}},
+    {"name": "Cancel", "request": {"method": "POST", "url": "{{baseUrl}}/api/projects/{{workflowId}}/cancel"}}
+  ]
+}

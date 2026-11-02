@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>DOM tests - Signup page</title>
+  <link rel='stylesheet' href='../assets/css/tokens.css'>
+  <link rel='stylesheet' href='../assets/css/base.css'>
+  <link rel='stylesheet' href='../assets/css/form.css'>
+  <style>
+    body {
+      padding: clamp(1rem, 4vw, 2rem);
+    }
+
+    .test-shell {
+      max-width: 46rem;
+      margin: 0 auto;
+    }
+
+    #test-results {
+      padding-left: 1.25rem;
+    }
+
+    #test-results li {
+      margin-bottom: 0.35rem;
+    }
+
+    #test-results li.pass {
+      color: #1e6b3a;
+    }
+
+    #test-results li.fail {
+      color: #b3261e;
+    }
+
+    #test-summary[data-tone='error'] {
+      color: #b3261e;
+    }
+
+    #test-summary[data-tone='info'] {
+      color: #1e6b3a;
+    }
+
+    #test-form {
+      margin-top: 2rem;
+      padding: 1.25rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--color-surface);
+    }
+  </style>
+</head>
+<body>
+  <main class='test-shell'>
+    <h1>DOM test harness</h1>
+    <p>Open this file in a browser. Results appear below.</p>
+    <p id='test-summary'></p>
+    <ul id='test-results'></ul>
+
+    <form id='test-form' class='form' novalidate>
+      <div class='field'>
+        <label class='field__label' for='test-username'>Username</label>
+        <input class='field__input' id='test-username' name='username' type='text' data-field='username' aria-describedby='test-username-error' required>
+        <p class='field__error' id='test-username-error' data-error-for='username' hidden></p>
+      </div>
+
+      <div class='field'>
+        <label class='field__label' for='test-password'>Password</label>
+        <input class='field__input' id='test-password' name='password' type='password' data-field='password' aria-describedby='test-password-error' required>
+        <p class='field__error' id='test-password-error' data-error-for='password' hidden></p>
+      </div>
+
+      <button class='button' type='submit'>Submit</button>
+      <p class='form__status' id='test-status' data-form-status role='status' aria-live='polite' aria-atomic='true'></p>
+    </form>
+  </main>
+
+  <script src='../assets/js/validation-engine.js'></script>
+  <script src='../assets/js/validation-rules.js'></script>
+  <script src='../assets/js/messages.js'></script>
+  <script src='../assets/js/feedback-renderer.js'></script>
+  <script src='../assets/js/submission-handler.js'></script>
+  <script src='../assets/js/form-controller.js'></script>
+  <script src='dom-test.js'></script>
+</body>
+</html>

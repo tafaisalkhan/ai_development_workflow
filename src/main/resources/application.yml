@@ -1,0 +1,17 @@
+server:
+  address: 127.0.0.1
+  port: 8081
+spring:
+  ai:
+    openai:
+      api-key: "PASTE_YOUR_DEEPSEEK_API_KEY_HERE"
+      base-url: https://api.deepseek.com
+      chat:
+        options:
+          model: deepseek-flash
+app:
+  workspace-root: ${AI_WORKSPACE:C:/AI-Development/workspace}
+  temporal:
+    address: ${TEMPORAL_ADDRESS:127.0.0.1:7233}
+    task-queue: AI_LOCAL_DEV_QUEUE
+  max-revisions: ${MAX_REVISIONS:3}
